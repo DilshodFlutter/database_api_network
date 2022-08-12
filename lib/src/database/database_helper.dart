@@ -46,7 +46,7 @@ class DatabaseHelperNew {
       '$columnName TEXT, '
       '$columnSlug TEXT, '
       '$columnImage TEXT, '
-      '$columnPrice INTEGER, '
+      '$columnPrice REAL, '
       '$columnDrugId INTEGER, '
       '$columnFullName TEXT)',
     );
