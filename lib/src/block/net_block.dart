@@ -51,9 +51,10 @@ class NetBlock {
     return id;
   }
 
-  Future<int> deleteData(int delete) async {
-    int id = await databaseHelper.deleteData(delete);
+  Future<int> deleteData(int delet) async {
+    int id = await databaseHelper.deleteData(delet);
     compare(data);
+    allDatabase();
     return id;
   }
 }

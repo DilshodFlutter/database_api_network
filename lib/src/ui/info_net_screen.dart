@@ -12,6 +12,8 @@ class NetInfoScreen extends StatefulWidget {
 }
 
 class _NetInfoScreenState extends State<NetInfoScreen> {
+  int selectedIndex = 0;
+
   @override
   void initState() {
     super.initState();
@@ -33,7 +35,7 @@ class _NetInfoScreenState extends State<NetInfoScreen> {
               ),
             );
           },
-          child: Text("Favourite"),
+          child: const Text("Favourite"),
         ),
       ),
       body: StreamBuilder<List<NetModel>>(
@@ -57,7 +59,17 @@ class _NetInfoScreenState extends State<NetInfoScreen> {
                     child: Column(
                       children: [
                         const SizedBox(height: 10.0),
-                        Image.network(data[index].image),
+                        Stack(
+                          children: [
+                            Image.network(data[index].image),
+                            const Icon(
+                              Icons.star_border,
+                              color: data[index] == true
+                                  ? Colors.yellow
+                                  : Colors.grey,
+                            ),
+                          ],
+                        ),
                         const SizedBox(height: 10.0),
                         Text(data[index].name),
                         const SizedBox(height: 10.0),
@@ -69,7 +81,7 @@ class _NetInfoScreenState extends State<NetInfoScreen> {
               },
             );
           }
-          return Center();
+          return Container();
         },
       ),
     );
