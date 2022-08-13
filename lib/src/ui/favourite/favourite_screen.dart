@@ -33,14 +33,26 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                   netBlock.deleteData(data[index].id);
                 },
                 child: Container(
-                  child: Center(
-                    child: Column(
-                      children: [
-                        Image.network(data[index].image),
-                        Text(data[index].name),
-                        Text(data[index].favourite.toString()),
-                      ],
-                    ),
+                  child: Column(
+                    children: [
+                      Stack(
+                        children: [
+                          Image.network(data[index].image),
+                          Align(
+                            alignment: const FractionalOffset(0.9, 0.1),
+                            child: Icon(
+                              data[index].favourite != false
+                                  ? Icons.bookmark_add_outlined
+                                  : Icons.bookmark_added,
+                              color: Colors.red,
+                              size: 40.0,
+                            ),
+                          )
+                        ],
+                      ),
+                      Text(data[index].name),
+                      Text(data[index].favourite.toString()),
+                    ],
                   ),
                 ),
               );

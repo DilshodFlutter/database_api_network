@@ -12,8 +12,6 @@ class NetInfoScreen extends StatefulWidget {
 }
 
 class _NetInfoScreenState extends State<NetInfoScreen> {
-  int selectedIndex = 0;
-
   @override
   void initState() {
     super.initState();
@@ -62,11 +60,15 @@ class _NetInfoScreenState extends State<NetInfoScreen> {
                         Stack(
                           children: [
                             Image.network(data[index].image),
-                            const Icon(
-                              Icons.star_border,
-                              color: data[index] == true
-                                  ? Colors.yellow
-                                  : Colors.grey,
+                            Align(
+                              alignment: const FractionalOffset(0.9 , 0.1),
+                              child: Icon(
+                                data[index].favourite == false
+                                    ? Icons.bookmark_add_outlined
+                                    : Icons.bookmark_added,
+                                color: Colors.red,
+                                size: 40.0,
+                              ),
                             ),
                           ],
                         ),
