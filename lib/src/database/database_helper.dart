@@ -1,14 +1,12 @@
-import 'dart:async';
-
 import 'package:database_api_network/src/model/net_model.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart';
 import 'package:sqflite/sqlite_api.dart';
+import 'package:path/path.dart';
 
-class DatabaseHelperNew {
-  static final DatabaseHelperNew _instance = DatabaseHelperNew.internal();
+class DatabaseHelper {
+  static final DatabaseHelper _instance = DatabaseHelper.internal();
 
-  factory DatabaseHelperNew() => _instance;
+  factory DatabaseHelper() => _instance;
 
   final String tableName = 'sdcsTable';
   final String columnId = 'id';
@@ -21,7 +19,7 @@ class DatabaseHelperNew {
 
   static Database? _db;
 
-  DatabaseHelperNew.internal();
+  DatabaseHelper.internal();
 
   Future<Database> get db async {
     if (_db != null) {

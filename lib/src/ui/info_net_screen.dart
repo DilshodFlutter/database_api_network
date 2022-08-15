@@ -59,9 +59,11 @@ class _NetInfoScreenState extends State<NetInfoScreen> {
                         const SizedBox(height: 10.0),
                         Stack(
                           children: [
-                            Image.network(data[index].image),
+                            Container(
+                                margin: const EdgeInsets.symmetric(horizontal: 40.0),
+                                child: Image.network(data[index].image)),
                             Align(
-                              alignment: const FractionalOffset(0.9 , 0.1),
+                              alignment: const FractionalOffset(0.9, 0.1),
                               child: Icon(
                                 data[index].favourite == false
                                     ? Icons.bookmark_add_outlined

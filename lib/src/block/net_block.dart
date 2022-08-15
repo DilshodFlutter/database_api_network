@@ -4,7 +4,7 @@ import 'package:database_api_network/src/model/net_model.dart';
 import 'package:rxdart/subjects.dart';
 
 class NetBlock {
-  DatabaseHelperNew databaseHelper = DatabaseHelperNew();
+  DatabaseHelper databaseHelper = DatabaseHelper();
   AppProvider appProvider = AppProvider();
 
   final _fetchNetData = PublishSubject<List<NetModel>>();
@@ -51,8 +51,8 @@ class NetBlock {
     return id;
   }
 
-  Future<int> deleteData(int delet) async {
-    int id = await databaseHelper.deleteData(delet);
+  Future<int> deleteData(int delData) async {
+    int id = await databaseHelper.deleteData(delData);
     compare(data);
     allDatabase();
     return id;
