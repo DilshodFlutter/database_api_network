@@ -60,7 +60,8 @@ class _NetInfoScreenState extends State<NetInfoScreen> {
                         Stack(
                           children: [
                             Container(
-                                margin: const EdgeInsets.symmetric(horizontal: 40.0),
+                                margin: const EdgeInsets.symmetric(
+                                    horizontal: 40.0),
                                 child: Image.network(data[index].image)),
                             Align(
                               alignment: const FractionalOffset(0.9, 0.1),

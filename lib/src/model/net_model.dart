@@ -1,8 +1,5 @@
 import 'dart:convert';
 
-// String netModelToJson(List<NetModel> data) =>
-//     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
 List<NetModel> netModelFromJson(String str) =>
     List<NetModel>.from(json.decode(str).map((x) => NetModel.fromJson(x)));
 
