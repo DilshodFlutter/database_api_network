@@ -1,6 +1,7 @@
 import 'package:database_api_network/src/model/net_model.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
+// ignore: depend_on_referenced_packages
 import 'package:path/path.dart';
 
 class DatabaseHelper {

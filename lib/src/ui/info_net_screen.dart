@@ -1,7 +1,6 @@
 import 'package:database_api_network/src/block/net_block.dart';
 import 'package:database_api_network/src/model/net_model.dart';
 import 'package:database_api_network/src/ui/favourite/favourite_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NetInfoScreen extends StatefulWidget {
